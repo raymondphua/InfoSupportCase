@@ -1,0 +1,58 @@
+{
+  "cursus": 
+  {
+    "code":"CNETIN",
+    "titel":"C# Programmeren",
+    "duurtijd":5
+  },
+  "startDatum":"14-10-2013",
+  "cursist": 
+  {
+    "id":"14",
+    "naam":"par x",
+    "adres":"adres x",
+    "woonplaats":"woonplaats x"
+  }
+}
+
+---------------------------------------
+
+{
+  "cursus": 
+  {
+    "code":"CNETIN",
+    "titel":"C# Programmeren",
+    "duurtijd":5
+  },
+  "startDatum":"14-10-2013",
+  "cursist": 
+  {
+    "id":"15",
+    "naam":"par y",
+    "adres":"adres y",
+    "woonplaats":"woonplaats y"
+  }
+}
+
+-----------------------------------
+
+-----------------------------------
+
+{
+  "cursus": 
+  {
+    "code":"CNETIN",
+    "titel":"C# Programmeren",
+    "duurtijd":5
+  },
+  "startDatum":"14-10-2013",
+  "cursist": 
+  {
+    "id":"999",
+    "naam":"AlleenStaand",
+    "adres":"Alleen",
+    "woonplaats":"Staand"
+  }
+}
+
+-----------------------------------
