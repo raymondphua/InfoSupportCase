@@ -4,12 +4,10 @@ import com.infosupport.Database.FactuurRepository;
 import com.infosupport.controller.FactuurController;
 import com.infosupport.domain.Bedrijf;
 import com.infosupport.domain.Cursist;
+import com.infosupport.domain.DummyCursist;
 import com.infosupport.domain.Factuur;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -61,13 +59,13 @@ public class FactuurResource implements DefaultResource<Factuur> {
     //TODO: Cursist is abstract so can't give an cursist from API
     // second param is null, above i use the same method with int id,
     // should be cursist below, but because of this impediment I will need random 2nd param
-    @GET
-    @Path("/{id}/cursist")
+    // Supposed to be GET not POST, again ^ method already exists with 1 int
+    @POST
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Response getFromCursist(@PathParam("id") int cursistId, int zero) {
+    public Response getFromCursist(DummyCursist dummy) {
 
         //this is not how it's supposed to be
-        Cursist cursist = new Bedrijf(cursistId, 0);
+        Cursist cursist = new Bedrijf(dummy.getId(), 0);
 
         facturen = factuurController.factuurFromCursist(cursist);
 
