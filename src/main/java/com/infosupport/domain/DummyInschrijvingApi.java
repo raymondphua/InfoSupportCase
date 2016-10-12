@@ -27,9 +27,9 @@ public class DummyInschrijvingApi {
         int month = 0;
         int year = 0;
 
-        day = Integer.valueOf(split[0]);
-        month = Integer.valueOf(split[1]);
-        year = Integer.valueOf(split[2]);
+        day = Integer.parseInt(split[0]);
+        month = Integer.parseInt(split[1]);
+        year = Integer.parseInt(split[2]);
 
         return LocalDate.of(year, month, day);
     }

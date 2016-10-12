@@ -40,6 +40,8 @@ public class InschrijvingRepository extends Database {
                     inschrijvingen.add(inschrijving);
                 }
             }
+
+            preparedStatement.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -62,6 +64,7 @@ public class InschrijvingRepository extends Database {
             System.out.println("Executing query: " + query);
             preparedStatement.executeQuery();
 
+            preparedStatement.close();
         } catch(SQLException e) {
             e.printStackTrace();
         }

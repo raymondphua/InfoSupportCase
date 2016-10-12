@@ -52,6 +52,7 @@ public class ImportReader {
                     case 3:
                         date = parseToDate(value);
                         break;
+                    default: titel = "";
                 }
             }
 
@@ -98,9 +99,9 @@ public class ImportReader {
     private LocalDate parseToDate(String s) {
         String[] split = s.split("/");
 
-        int day = Integer.valueOf(split[0]);
-        int month = Integer.valueOf(split[1]);
-        int year = Integer.valueOf(split[2]);
+        int day = Integer.parseInt(split[0]);
+        int month = Integer.parseInt(split[1]);
+        int year = Integer.parseInt(split[2]);
 
         return LocalDate.of(year, month, day);
     }

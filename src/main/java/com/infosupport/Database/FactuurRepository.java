@@ -33,6 +33,7 @@ public class FactuurRepository extends Database{
             ResultSet rset = preparedStatement.executeQuery();
 
             setFacturen(rset, facturen);
+            preparedStatement.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -54,6 +55,7 @@ public class FactuurRepository extends Database{
             ResultSet rset = preparedStatement.executeQuery();
 
             setFacturen(rset, facturen);
+            preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -76,6 +78,7 @@ public class FactuurRepository extends Database{
             ResultSet rset = preparedStatement.executeQuery();
 
             setFacturen(rset, facturen);
+            preparedStatement.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

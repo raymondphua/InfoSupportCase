@@ -37,6 +37,7 @@ public class CursistRepository extends Database {
             }
 
             cursists = fixRelations(allCursisten);
+            preparedStatement.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -49,7 +50,6 @@ public class CursistRepository extends Database {
 
         Cursist returnCursist = null;
         try {
-            List<Cursist> allCursisten = new ArrayList<>();
 
             String query = "SELECT * FROM CURSISTS WHERE PARENT = ?";
 
@@ -59,9 +59,9 @@ public class CursistRepository extends Database {
             ResultSet rset = preparedStatement.executeQuery();
 
             while(rset.next()) {
-                allCursisten.add(mapper.mapToCursist(rset));
+                returnCursist = mapper.mapToCursist(rset);
             }
-
+            preparedStatement.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -90,7 +90,7 @@ public class CursistRepository extends Database {
                 preparedStatement.setInt(5, 1);
 
                 System.out.println("\n Executing query: " + query);
-                rowsUpdated = preparedStatement.executeUpdate();
+                //rowsUpdated = preparedStatement.executeUpdate();
             } else {
                 query = "INSERT INTO CURSISTS (NAAM, ADRES, WOONPLAATS, PARENT, OFFERTE, ISBEDRIJF) " +
                         "VALUES (?, ?, ?, ?, ?, ?)";
@@ -105,6 +105,8 @@ public class CursistRepository extends Database {
                 System.out.println("\n Executing query: " + query);
 
                 rowsUpdated = preparedStatement.executeUpdate();
+
+                preparedStatement.close();
             }
 
         } catch (SQLException ex) {
@@ -114,7 +116,7 @@ public class CursistRepository extends Database {
 
     public List<Cursist> fixRelations(List<Cursist> cursists) {
 
-        List<Cursist> fixedCursists = new ArrayList<>();
+        List<Cursist> fixedCursists = null;
 
         List<Particulier> particulieren = (List<Particulier>)(List<?>) cursists.stream().filter(c -> c instanceof Particulier).collect(Collectors.toList());
 

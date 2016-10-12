@@ -29,6 +29,8 @@ public class CursusRepository extends Database {
                 cursussen.add(mapper.mapToCursus(rset));
             }
             //cursussen = mapToCursusList(rset);
+
+            preparedStatement.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -63,6 +65,8 @@ public class CursusRepository extends Database {
                 System.out.println("Executing query: " + queryDatum);
                 preparedStatement1.executeQuery();
             }
+
+            preparedStatement.close();
         } catch(SQLException e) {
             e.printStackTrace();
         }

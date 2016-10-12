@@ -27,7 +27,7 @@ public class CaseOneTester {
 
         cursusRepository.getAllCursussen();
 
-        Cursus cursusTest = new Cursus("test", "test", 3);
+        //Cursus cursusTest = new Cursus("test", "test", 3);
         LocalDate date = LocalDate.of(2016, 10, 10);
         LocalDate date2 = LocalDate.of(2016, 10, 21);
         List<LocalDate> dates = new ArrayList<>();
@@ -41,7 +41,7 @@ public class CaseOneTester {
         factuurRepository.getAllFacturen();
         //factuurRepository.createFactuur(testFactuur);
 
-        Cursist cursist = new Particulier(9, "test", "test", "test", 7);
+        //Cursist cursist = new Particulier(9, "test", "test", "test", 7);
         inschrijvingRepository.getAllInschrijvingen();
         //inschrijvingRepository.registerCursist(cursusTest, date, cursist);
 

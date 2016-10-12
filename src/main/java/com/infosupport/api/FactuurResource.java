@@ -64,7 +64,7 @@ public class FactuurResource implements DefaultResource<Factuur> {
     @GET
     @Path("/{id}/cursist")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Response getFromWeek(@PathParam("id") int cursistId, int zero) {
+    public Response getFromCursist(@PathParam("id") int cursistId, int zero) {
 
         //this is not how it's supposed to be
         Cursist cursist = new Bedrijf(cursistId, 0);
